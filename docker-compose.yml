@@ -7,5 +7,5 @@ services:
       context: .
       dockerfile: Dockerfile
     command: nmcli c up vpn && python3 /app/main.py
-    env_file: .env.local
+    env_file: .env
     privileged: true
