@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  discord_bot:
+    user: root
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: nmcli c up vpn && python3 /app/main.py
+    env_file: .env.local
+    privileged: true
