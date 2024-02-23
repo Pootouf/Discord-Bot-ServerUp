@@ -13,6 +13,8 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online,
                                  activity=discord.Game("Scanning servers"))
     print('Bot is ready')
+    message_channel = client.get_channel(int(channel))
+    await message_channel.send("Bot is launched")
     is_up.start()
 
 @tasks.loop(minutes=10)
